@@ -16,6 +16,7 @@ const props = defineProps<{
 </script>
 
 <style lang="scss">
+@use '@/assets/styles/vars' as *;
 .catalog-list {
     width: 100%;
     display: flex;
@@ -26,9 +27,18 @@ const props = defineProps<{
     // gap: 20px;
     
     &__item {
-        width: 100%;
-        max-width: 290px;
+        // max-width: calc(33.333% - 20px);
+        // max-width: 290px;
+        width: calc(25% - 22.5px);
+        // flex-grow: 1;
         display: flex;
+        justify-content: center;
+        @include tablet {
+            width: calc(33.333% - 20px);
+        }
+        @include mobile {
+            width: calc(50% - 15px);
+        }
         &:last-of-type {
             margin-right: auto;
         }

@@ -35,6 +35,7 @@ const splitPrice = computed(() => {
 </script>
 
 <style lang="scss">
+@use '@/assets/styles/vars' as *;
 a {
     text-decoration: none;
     color: inherit;
@@ -70,6 +71,13 @@ a {
         justify-content: flex-start;
         align-items: center;
         gap: 10px;
+        margin-top: 15px;
+        @include mobile {
+            margin-top: 5px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
     }
     &__price {
         font-size: 24px;
@@ -86,6 +94,10 @@ a {
     &__title {
         font-size: 16px;
         font-weight: 400;
+        @include mobile {
+            font-size: 12px;
+            margin-top: 5px;
+        }
     }
 
     &:hover {

@@ -1,3 +1,4 @@
+@use './vars' as *;
 .ui-btn {
     text-decoration: none;
     outline: none;
@@ -33,6 +34,9 @@
     mask-repeat: no-repeat;
     mask-position: center;
     background-color: black;
+    @include mobile {
+        width: 16px;
+    }
     &:hover {
         background-color: var(--colorRed);
         transform: scale(1.1);

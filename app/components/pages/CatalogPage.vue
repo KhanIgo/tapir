@@ -22,16 +22,40 @@ const products = computed(() => productsStore.items)
 </script>
 
 <style lang="scss">
+@use '@/assets/styles/vars' as *;
 .catalog-page {
-    padding: 50px 0;
+    padding: 100px 0 75px;
+    @include tablet {
+        padding: 80px 0 45px;
+    }
+    @include mobile {
+        padding: 20px 0 25px;
+    }
     &__container {
         flex-direction: column;
     }
     &__title {
         font-size: 42px;
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 110px;
         text-transform: uppercase;
+        @include tablet {
+            font-size: 32px;
+            margin-bottom: 80px;
+        }
+        @include mobile {
+            font-size: 24px;
+            margin-bottom: 35px;
+        }
+    }
+    &__more {
+        margin-top: 85px;
+        @include tablet {
+            margin-top: 55px;
+        }
+        @include mobile {
+            margin-top: 20px;
+        }
     }
 }
 </style>
