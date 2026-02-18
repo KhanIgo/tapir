@@ -24,7 +24,8 @@ const products = productsStore.items
         flex-direction: column;
     }
     &__title {
-        font-size: 64px;
+        font-size: 42px;
+        text-align: center;
         margin-bottom: 40px;
         text-transform: uppercase;
     }

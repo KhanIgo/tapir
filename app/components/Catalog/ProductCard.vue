@@ -1,22 +1,23 @@
 <template>
     <div class="product-card">
         <button class="ui-btn_fav product-card__fav-btn"></button>
-        <div class="product-card__thumb">
+        <NuxtLink to="#" class="product-card__thumb">
             <img :src="product.image" :alt="product.name" class="product-card__image">
-        </div>
-        <div class="product-card__price-split">
+        </NuxtLink>
+        <NuxtLink to="#" class="product-card__price-split">
             <p class="product-card__price">
                 {{ formatPrice(product.price) }} ₽
             </p>
-            <div class="product-card__split">
+            <p class="product-card__split">
                 {{ formatPrice(splitPrice) }} ₽ × 2
-            </div>
-        </div>
-        <h3 class="product-card__title">{{ product.name }}</h3>
+            </p>
+        </NuxtLink>
+        <NuxtLink to="#" class="product-card__title">{{ product.name }}</NuxtLink>
     </div>
 </template>
 
 <script setup lang="ts">
+import { NuxtLink } from '#components';
 import type { Product } from '@/types/product'
 import { computed } from 'vue'
 
@@ -34,6 +35,10 @@ const splitPrice = computed(() => {
 </script>
 
 <style lang="scss">
+a {
+    text-decoration: none;
+    color: inherit;
+}
 .product-card {
     width: 100%;
     display: flex;
@@ -50,6 +55,7 @@ const splitPrice = computed(() => {
      
 
     &__thumb {
+        transition: 0.3s ease;
         aspect-ratio: 29/18;
         overflow: hidden;
         img {
@@ -61,8 +67,9 @@ const splitPrice = computed(() => {
     }
     &__price-split {
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
+        gap: 10px;
     }
     &__price {
         font-size: 24px;
@@ -70,11 +77,21 @@ const splitPrice = computed(() => {
     }
     &__split {
         font-size: 14px;
-        color: var(--colorGrey);
+        font-weight: 500;
+        color: white;
+        background-color: black;
+        line-height: 1em;
+        padding: 3px 6px;
     }
     &__title {
         font-size: 16px;
         font-weight: 400;
+    }
+
+    &:hover {
+        .product-card__thumb {
+            transform: scale(1.05) translateY(-15px);
+        }
     }
 }
 </style>
