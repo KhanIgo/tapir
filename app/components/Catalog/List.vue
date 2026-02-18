@@ -1,9 +1,9 @@
 <template>
-    <div class="catalog-list">
+    <TransitionGroup name="product" tag="div" class="catalog-list">
         <div class="catalog-list__item" v-for="product in props.products" :key="product.id">
             <ProductCard :product="product" />
         </div>
-    </div>
+    </TransitionGroup>
 </template>
 
 <script setup lang="ts">
@@ -27,10 +27,7 @@ const props = defineProps<{
     // gap: 20px;
     
     &__item {
-        // max-width: calc(33.333% - 20px);
-        // max-width: 290px;
         width: calc(25% - 22.5px);
-        // flex-grow: 1;
         display: flex;
         justify-content: center;
         @include tablet {
@@ -43,5 +40,20 @@ const props = defineProps<{
             margin-right: auto;
         }
     }
+}
+
+.product-enter-active {
+    transition: opacity 0.35s ease-out, transform 0.35s ease-out;
+}
+.product-enter-from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.product-enter-to {
+    opacity: 1;
+    transform: translateY(0);
+}
+.product-move {
+    transition: transform 0.35s ease-out;
 }
 </style>
