@@ -30,7 +30,7 @@ const props = defineProps<{
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        gap: 17px;
     }
     &__title {
         font-size: 14px;

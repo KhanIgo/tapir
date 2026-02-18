@@ -1,7 +1,23 @@
+$tablet: 980px;
+$mobile: 600px;
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
 body {
     font-family: 'Golos Text', sans-serif;
     font-size: 16px;
     --gutter: 15px;
     --colorRed: #FF0000;
     --colorGrey: #6F6F6F;
+    --colorLightGrey: #F5F5F5;
 }

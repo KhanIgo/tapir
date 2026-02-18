@@ -1,3 +1,4 @@
+@use './vars' as *;
 * {
     margin: 0;
     padding: 0;
@@ -18,4 +19,10 @@
     padding-right: var(--gutter);
     display: flex;
     flex-wrap: wrap;
+}
+
+.mobile-only {
+    @media (min-width: $mobile) {
+        display: none;
+    }
 }

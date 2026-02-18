@@ -23,5 +23,6 @@ import AppFooter from '@/components/Footer/AppFooter.vue'
 main {
   width: 100%;
   flex-grow: 1;
+  display: flex;
 }
 </style>
