@@ -17,3 +17,39 @@ const props = defineProps<{
     nav: NavItem[]
 }>()
 </script>
+
+<style lang="scss">
+.footer-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__title {
+        font-size: 14px;
+        font-weight: 400;
+        color: var(--colorGrey);
+        // margin-bottom: 20px;
+    }
+    &__item {
+        // padding: 0 13px;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        color: white;
+        transition: 0.3s ease;
+        display: flex;
+        &:hover {
+            transform: translateX(0.5em);
+        }
+    }
+}
+</style>

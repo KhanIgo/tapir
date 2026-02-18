@@ -15,3 +15,29 @@ const props = defineProps<{
     nav: NavItem[]
 }>()
 </script>
+
+<style lang="scss">
+.main-nav {
+    width: 100%;
+    &__list {
+        width: 100%;
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+    &__item {
+        padding: 0 13px;
+    }
+    &__link {
+        text-decoration: none;
+        font-size: 14px;
+        color: black;    
+        transition: 0.3s ease;
+        display: flex;
+        &:hover {
+            transform: scale(1.1);
+            // color: var(--colorRed);
+        }
+    }
+}
+</style>

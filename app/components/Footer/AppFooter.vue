@@ -13,3 +13,16 @@
   import Nav from '@/components/Footer/Nav.vue'
   const { footerNavs } = useNavigationStore()
 </script>
+
+<style lang="scss">
+.main-footer {
+  background-color: black;
+  &__container {
+    // display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+</style>

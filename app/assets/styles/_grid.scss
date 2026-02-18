@@ -4,8 +4,11 @@
     box-sizing: border-box;
 }
 body {
+    font-family: 'Golos Text', sans-serif;
     font-size: 16px;
     --gutter: 15px;
+    --colorRed: #FF0000;
+    --colorGrey: #6F6F6F;
 }
 .row {
     width: 100%;
@@ -13,9 +16,11 @@ body {
 }
 .container {
     max-width: 100%;
-    width: 1200px;
+    width: 1350px;
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--gutter);
     padding-right: var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
 }
