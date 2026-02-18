@@ -5,6 +5,9 @@
             <div class="catalog-page__products">
                 <CatalogList :products="products" />
             </div>
+            <div class="catalog-page__more">
+                <LoadMore />
+            </div>
         </div>
     </div>
 </template>
@@ -12,9 +15,10 @@
 <script setup lang="ts">
 import { useProductsStore } from '@/stores/products'
 import CatalogList from '@/components/Catalog/List.vue'
-
+import LoadMore from '@/components/Catalog/LoadMore.vue'
+import { computed } from 'vue'
 const productsStore = useProductsStore()
-const products = productsStore.items
+const products = computed(() => productsStore.items)
 </script>
 
 <style lang="scss">

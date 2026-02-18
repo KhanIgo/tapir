@@ -16,6 +16,12 @@
     color: white;
     // border-radius: 5px;
 }
+.ui-btn_bordered {
+    @extend .ui-btn;
+    border: 1px solid black;
+    color: black;
+    background-color: transparent;
+}
 .ui-btn_fav {
     @extend .ui-btn;
     display: block;
